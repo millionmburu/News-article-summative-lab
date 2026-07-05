@@ -61,11 +61,14 @@ try:
 
             #sets character value to 0 and loops through words in the article adding the length of each word to total_chars
             total_chars = 0
-            for word in word_list:
-                word_length = len(word)
-                total_chars += word_length
-        
-            average_word_length = total_chars/total_words #calculates the average word length
+            i = 0
+            
+            while i < total_words:
+                word = word_list[i]
+                total_chars += len(word)
+                i += 1
+
+                average_word_length = total_chars/total_words
 
             return average_word_length
     
@@ -114,6 +117,8 @@ try:
         print(f"Most Common Word: {identify_most_common_word(article_text)}")
         print(f"Average Word Length: {calculate_average_word_length(article_text):.2f}")
         print(f"Occurrences of 'the': {count_specific_word(article_text, 'the')}")
+
+
 
 # 3. Catch the missing file error at the very end
 except FileNotFoundError:
