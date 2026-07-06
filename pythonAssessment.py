@@ -35,7 +35,7 @@ try:
             word_list = perfect_text.split()
 
             if not word_list:
-                return ("None") # Incase of an empty string 
+                return None # Incase of an empty string 
         
             words_count = Counter(word_list) #Uses counter to tally up every word in the article
 
